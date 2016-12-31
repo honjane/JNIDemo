@@ -1,7 +1,7 @@
 package com.honjane.ndkdemo;
 
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
@@ -29,18 +29,31 @@ public class MainActivity extends AppCompatActivity {
 
         jniUtils.printC();
         jniUtils.accessStaticField();
-        Log.i("main----intMethod",jniUtils.intMethod(4)+"");
+
         Log.i("main----addNum",jniUtils.addNum()+"");
         Log.i("main----name",jniUtils.name);
-        Log.i("main----age修改前",jniUtils.getAge()+"");
+
+        //demo
+        Log.i("main----intMethod",jniUtils.intMethod(4)+"");
         Log.i("main----booleanMethod",jniUtils.booleanMethod(true)+"");
         Log.i("main----stringMethod",jniUtils.stringMethod("nihao"));
         Log.i("main----intArrayMethod",jniUtils.intArrayMethod(new int[]{3,5,6,12,46,33})+"");
 
-
+        //field
+        Log.i("main----age修改前",jniUtils.getAge()+"");
         jniUtils.accessPrivateField();
         Log.i("main----age修改后",jniUtils.getAge()+"");
 
+        //method
+        Log.i("main----sex赋值前",jniUtils.getSex());
+        jniUtils.accessPublicMethod();
+        Log.i("main----sex赋值后",jniUtils.getSex());
+
+
+        Log.i("main----height调用java方法", JNIUtils.getHeight()+"");
+
+        Log.i("main----height调用JNI方法",jniUtils.accessStaticMethod()+"");
+        Log.i("main----调用java super方法",jniUtils.accessSuperMethod());
 
     }
 

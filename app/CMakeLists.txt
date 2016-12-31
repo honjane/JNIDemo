@@ -21,6 +21,7 @@ add_library( # Sets the name of the library.
              src/main/cpp/native-hello.cpp
              src/main/cpp/native-demo.cpp
              src/main/cpp/native-field.cpp
+             src/main/cpp/native-method.cpp
              src/main/cpp/native-variable.cpp
              src/main/cpp/native-throw.cpp )
 
