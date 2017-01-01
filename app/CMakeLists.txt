@@ -23,6 +23,7 @@ add_library( # Sets the name of the library.
              src/main/cpp/native-field.cpp
              src/main/cpp/native-method.cpp
              src/main/cpp/native-variable.cpp
+             src/main/cpp/native-string.cpp
              src/main/cpp/native-throw.cpp )
 
 # Searches for a specified prebuilt library and stores the path as a

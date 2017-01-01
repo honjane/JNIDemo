@@ -80,6 +80,13 @@ public class JNIUtils extends SuperUtils{
 
     public native ArrayList<Person> personArrayListMethod(ArrayList<Person> persons);
 
+
+    //字符串处理
+
+    public native String handlerString(String text);
+    public native byte[] handlerStrToByte(String text);
+
+
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");

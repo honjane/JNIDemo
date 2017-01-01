@@ -93,7 +93,7 @@ jobject  Java_com_honjane_ndkdemo_JNIUtils_personArrayListMethod(JNIEnv* env,job
    for(int i = 0 ; i < 3 ; i++)
        {
            jstring str = env->NewStringUTF("Native");
-           //通过调用该对象的构造函数来new 一个 Student实例
+           //通过调用该对象的构造函数来new 一个 person实例
            jobject per_obj = env->NewObject(jpersonCls , jpersonConstrocMID , 20+i ,str);  //构造一个person对象
            //执行Arraylist类实例的add方法，添加一个person对象
            env->CallBooleanMethod(list_obj ,list_add, per_obj);

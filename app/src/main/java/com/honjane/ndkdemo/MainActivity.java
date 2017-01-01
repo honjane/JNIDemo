@@ -70,6 +70,16 @@ public class MainActivity extends AppCompatActivity {
         }
         Log.i("main----输出java list",personList.toString());
         Log.i("main----输出jni list",jniUtils.personArrayListMethod(personList).toString());
+
+
+        //字符串处理
+
+        Log.i("main----handlerString",jniUtils.handlerString(" happy new year"));
+        byte [] bytes = jniUtils.handlerStrToByte("honjane");
+        for (byte b : bytes) {
+            Log.i("main---handlerStrToByte", (char)b+"");
+        }
+
     }
 
 
