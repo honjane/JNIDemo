@@ -1,5 +1,9 @@
 package com.honjane.ndkdemo;
 
+import com.honjane.ndkdemo.model.Person;
+
+import java.util.ArrayList;
+
 /**
  * Created by honjane on 2016/12/24.
  */
@@ -51,7 +55,7 @@ public class JNIUtils extends SuperUtils{
 
     public native void printC();
 
-    //demo ---
+
 
     /**
      * A native method that is implemented by the 'native-lib' native library,
@@ -62,7 +66,7 @@ public class JNIUtils extends SuperUtils{
     public native String variableJNI(String arr, int len);
 
     /**
-     * demo
+     * 传参数
      */
     public native int intMethod(int n);
 
@@ -72,8 +76,13 @@ public class JNIUtils extends SuperUtils{
 
     public native int intArrayMethod(int[] intArray);
 
+    public native Person objectMethod(Person person);
+
+    public native ArrayList<Person> personArrayListMethod(ArrayList<Person> persons);
+
     // Used to load the 'native-lib' library on application startup.
     static {
         System.loadLibrary("native-lib");
     }
+
 }

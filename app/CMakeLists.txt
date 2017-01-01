@@ -19,7 +19,7 @@ add_library( # Sets the name of the library.
              # Associated headers in the same location as their source
              # file are automatically included.
              src/main/cpp/native-hello.cpp
-             src/main/cpp/native-demo.cpp
+             src/main/cpp/native-params.cpp
              src/main/cpp/native-field.cpp
              src/main/cpp/native-method.cpp
              src/main/cpp/native-variable.cpp

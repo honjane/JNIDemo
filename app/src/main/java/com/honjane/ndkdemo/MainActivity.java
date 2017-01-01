@@ -5,6 +5,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.TextView;
 
+import com.honjane.ndkdemo.model.Person;
+
+import java.util.ArrayList;
+
 
 public class MainActivity extends AppCompatActivity {
 
@@ -33,11 +37,12 @@ public class MainActivity extends AppCompatActivity {
         Log.i("main----addNum",jniUtils.addNum()+"");
         Log.i("main----name",jniUtils.name);
 
-        //demo
+        //传参数
         Log.i("main----intMethod",jniUtils.intMethod(4)+"");
         Log.i("main----booleanMethod",jniUtils.booleanMethod(true)+"");
-        Log.i("main----stringMethod",jniUtils.stringMethod("nihao"));
+        Log.i("main----stringMethod",jniUtils.stringMethod("hello"));
         Log.i("main----intArrayMethod",jniUtils.intArrayMethod(new int[]{3,5,6,12,46,33})+"");
+        Log.i("main----objectMethod",jniUtils.objectMethod(new Person()).toString()+"");
 
         //field
         Log.i("main----age修改前",jniUtils.getAge()+"");
@@ -55,6 +60,16 @@ public class MainActivity extends AppCompatActivity {
         Log.i("main----height调用JNI方法",jniUtils.accessStaticMethod()+"");
         Log.i("main----调用java super方法",jniUtils.accessSuperMethod());
 
+        ArrayList<Person> personList = new ArrayList<>();
+        Person person;
+        for (int i =0 ;i<3;i++){
+            person = new Person();
+            person.setName("lily");
+            person.setAge(10+i);
+            personList.add(person);
+        }
+        Log.i("main----输出java list",personList.toString());
+        Log.i("main----输出jni list",jniUtils.personArrayListMethod(personList).toString());
     }
 
 
